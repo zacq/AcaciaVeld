@@ -173,9 +173,9 @@ export default function CataloguePreview() {
           </Link>
         </SectionReveal>
 
-        {/* Stock grid */}
-        <div className="grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {featuredStock.map((animal, i) => (
+        {/* Stock grid — first row only (4 cards) */}
+        <div className="grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {featuredStock.slice(0, 4).map((animal, i) => (
             <SectionReveal key={animal.id} delay={i * 50}>
               <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-100">
                 {/* Image */}
