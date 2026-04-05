@@ -7,47 +7,151 @@ import SectionReveal from "@/components/ui/SectionReveal";
 import Button from "@/components/ui/Button";
 import LeadModal from "@/components/forms/LeadModal";
 
-const featuredBreeds = [
+const featuredStock = [
   {
-    id: "featured-1",
-    name: "Dorper Ram",
-    breed: "Dorper",
-    type: "Sheep",
-    image: "/images/Dorper.png",
-    tagline: "World's fastest-growing meat sheep",
-    highlights: ["Self-shedding", "High ADG", "Drought tolerant"],
+    id: "cat-1",
+    name: "Boer Doe",
+    breed: "Boer",
+    type: "Goat",
+    image: "/images/Catalogue/img1.png",
+    tagline: "Classic Boer conformation — ideal breeding female",
+    highlights: ["Proven fertility", "Strong maternal", "Disease resistant"],
+    status: "Available",
   },
   {
-    id: "featured-2",
+    id: "cat-2",
+    name: "Red Maasai Ram",
+    breed: "Red Maasai",
+    type: "Sheep",
+    image: "/images/Catalogue/img2.png",
+    tagline: "East Africa's indigenous elite",
+    highlights: ["Parasite resistant", "Heat adapted", "Trypanotolerant"],
+    status: "Available",
+  },
+  {
+    id: "cat-3",
+    name: "Speckled Persian Ewe & Lamb",
+    breed: "Speckled Persian",
+    type: "Sheep",
+    image: "/images/Catalogue/img3.png",
+    tagline: "Exceptional mothering — proven lambing record",
+    highlights: ["Excellent mothering", "High fertility", "Hardy"],
+    status: "Available",
+  },
+  {
+    id: "cat-4",
+    name: "Speckled Persian Young",
+    breed: "Speckled Persian",
+    type: "Sheep",
+    image: "/images/Catalogue/img4.png",
+    tagline: "Young stock — ready for first mating",
+    highlights: ["Young stock", "Good frame", "Arid-climate hardy"],
+    status: "Available",
+  },
+  {
+    id: "cat-5",
     name: "Boer Buck",
     breed: "Boer",
     type: "Goat",
-    image: "/images/boer.png",
-    tagline: "The king of meat goats",
-    highlights: ["High dressing %", "Prolific breeder", "Disease resistant"],
+    image: "/images/Catalogue/img5.png",
+    tagline: "Full-blood Boer — champion muscle conformation",
+    highlights: ["High dressing %", "Prolific sire", "Fast maturing"],
+    status: "Available",
   },
   {
-    id: "featured-3",
-    name: "Red Maasai Ewe",
-    breed: "Red Maasai",
-    type: "Sheep",
-    image: "/images/Red%20masai.png",
-    tagline: "East Africa's indigenous elite",
-    highlights: ["Parasite resistant", "Heat adapted", "Trypanotolerant"],
+    id: "cat-6",
+    name: "Zebu Bull",
+    breed: "Zebu",
+    type: "Cattle",
+    image: "/images/Catalogue/img6.png",
+    tagline: "Heat-adapted Zebu — premium tropical genetics",
+    highlights: ["Heat tolerant", "Tick resistant", "Low maintenance"],
+    status: "Available",
   },
   {
-    id: "featured-4",
-    name: "Speckled Persian",
+    id: "cat-7",
+    name: "Zebu Cow & Calf",
+    breed: "Zebu",
+    type: "Cattle",
+    image: "/images/Catalogue/img7.png",
+    tagline: "Proven Zebu dam — strong maternal line",
+    highlights: ["Good milking", "Strong calf", "Hardy"],
+    status: "Available",
+  },
+  {
+    id: "cat-8",
+    name: "Dairy Cow & Calf",
+    breed: "Friesian Cross",
+    type: "Cattle",
+    image: "/images/Catalogue/img8.png",
+    tagline: "High-production dairy — farm-direct",
+    highlights: ["High yield", "Calm temperament", "Proven dam"],
+    status: "Available",
+  },
+  {
+    id: "cat-9",
+    name: "Grey Mare",
+    breed: "Horse",
+    type: "Horse",
+    image: "/images/Catalogue/img9.png",
+    tagline: "Well-conformed grey mare — calm & reliable",
+    highlights: ["Good conformation", "Calm", "Working horse"],
+    status: "Available",
+  },
+  {
+    id: "cat-10",
+    name: "Chestnut Stallion",
+    breed: "Horse",
+    type: "Horse",
+    image: "/images/Catalogue/img10.png",
+    tagline: "Strong chestnut — excellent working lines",
+    highlights: ["Athletic build", "Strong back", "Well-trained"],
+    status: "Available",
+  },
+  {
+    id: "cat-11",
+    name: "Brown Horse Pair",
+    breed: "Horse",
+    type: "Horse",
+    image: "/images/Catalogue/img11.png",
+    tagline: "Matched pair — working or breeding",
+    highlights: ["Matched pair", "Field ready", "Hardy"],
+    status: "Available",
+  },
+  {
+    id: "cat-12",
+    name: "Speckled Ewe",
     breed: "Speckled Persian",
     type: "Sheep",
-    image: "/images/Speckled%20persian.png",
-    tagline: "Hardy & highly productive",
-    highlights: ["Excellent mothering", "Fertile", "Arid-climate hardy"],
+    image: "/images/Catalogue/img12.png",
+    tagline: "Prime Speckled Persian — excellent body condition",
+    highlights: ["Prime condition", "Fertile", "Arid-climate hardy"],
+    status: "Available",
+  },
+  {
+    id: "cat-13",
+    name: "Black Goat Buck",
+    breed: "Black Goat",
+    type: "Goat",
+    image: "/images/Catalogue/img13.png",
+    tagline: "Hardy black goat — strong & healthy",
+    highlights: ["Hardy", "Disease resistant", "Good sire"],
+    status: "Available",
+  },
+  {
+    id: "cat-14",
+    name: "Spotted Persian",
+    breed: "Speckled Persian",
+    type: "Sheep",
+    image: "/images/Catalogue/img14.png",
+    tagline: "Spotted Persian — distinctive & productive",
+    highlights: ["Unique markings", "Good growth", "Hardy"],
+    status: "Available",
   },
 ];
 
 export default function CataloguePreview() {
-  const [selected, setSelected] = useState<(typeof featuredBreeds)[0] | null>(null);
+  const [selected, setSelected] = useState<(typeof featuredStock)[0] | null>(null);
 
   return (
     <section className="py-16 sm:py-24 px-4 sm:px-6 bg-white">
@@ -69,23 +173,23 @@ export default function CataloguePreview() {
           </Link>
         </SectionReveal>
 
-        {/* Breed cards */}
-        <div className="grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {featuredBreeds.map((breed, i) => (
-            <SectionReveal key={breed.id} delay={i * 80}>
+        {/* Stock grid */}
+        <div className="grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {featuredStock.map((animal, i) => (
+            <SectionReveal key={animal.id} delay={i * 50}>
               <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-100">
                 {/* Image */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-gray-50">
                   <Image
-                    src={breed.image}
-                    alt={`${breed.name} — ${breed.breed}`}
+                    src={animal.image}
+                    alt={`${animal.name} — ${animal.breed}`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
                   <span className="absolute right-3 top-3 rounded-full bg-brand-accent px-2.5 py-0.5 text-[10px] font-semibold text-white">
-                    Available
+                    {animal.status}
                   </span>
                 </div>
 
@@ -93,17 +197,17 @@ export default function CataloguePreview() {
                 <div className="flex flex-1 flex-col p-4 sm:p-5">
                   <div className="mb-1 flex items-center justify-between gap-2">
                     <p className="heading text-base font-bold text-gray-900">
-                      {breed.name}
+                      {animal.name}
                     </p>
                     <span className="shrink-0 rounded-full border border-green-100 bg-green-50 px-2 py-0.5 text-[10px] font-medium text-brand-green">
-                      {breed.type}
+                      {animal.type}
                     </span>
                   </div>
 
-                  <p className="mb-3 text-xs text-gray-500">{breed.tagline}</p>
+                  <p className="mb-3 text-xs text-gray-500 leading-relaxed">{animal.tagline}</p>
 
                   <div className="mb-4 flex flex-wrap gap-1.5">
-                    {breed.highlights.map((h) => (
+                    {animal.highlights.map((h) => (
                       <span
                         key={h}
                         className="rounded-full bg-brand-accent/10 px-2 py-0.5 text-[10px] font-medium text-brand-green"
@@ -116,7 +220,7 @@ export default function CataloguePreview() {
                   <div className="mt-auto">
                     <p className="mb-3 text-xs italic text-gray-400">Price on request</p>
                     <button
-                      onClick={() => setSelected(breed)}
+                      onClick={() => setSelected(animal)}
                       className="block w-full rounded-full bg-brand-accent py-2 text-center text-xs font-semibold text-white transition hover:bg-brand-green"
                     >
                       Enquire Now →
