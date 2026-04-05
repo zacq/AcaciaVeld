@@ -1,5 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { fetchAnimals } from "@/lib/airtable";
 import AnimalGrid from "@/components/livestock/AnimalGrid";
 import Footer from "@/components/sections/Footer";
@@ -32,17 +34,26 @@ export default async function CataloguePage({ searchParams }: PageProps) {
     <>
       <main className="min-h-screen">
         {/* Header */}
-        <div className="border-b border-white/8 bg-[#0a1f12] px-6 pt-28 pb-12">
+        <div className="border-b border-white/8 bg-[#0a1f12] px-4 sm:px-6 pt-20 sm:pt-28 pb-10 sm:pb-12">
           <div className="mx-auto max-w-6xl">
+            {/* Back button */}
+            <Link
+              href="/"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-xs font-medium text-white/60 transition hover:border-brand-accent/50 hover:text-brand-accent"
+            >
+              <ArrowLeft size={14} />
+              Back to Home
+            </Link>
+
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-brand-accent">
               AcaciaVelds Catalogue
             </p>
-            <h1 className="heading text-4xl font-bold text-white sm:text-5xl">
+            <h1 className="heading text-3xl sm:text-4xl font-bold text-white sm:text-5xl">
               Premium Livestock
               <br />
               <span className="text-gradient">For Sale in Kenya</span>
             </h1>
-            <p className="mt-4 max-w-xl text-white/60">
+            <p className="mt-4 max-w-xl text-sm sm:text-base text-white/60">
               All animals are health-certified, vaccinated, and verified by our
               resident veterinarian. Farm-direct pricing with no middlemen.
             </p>
@@ -50,7 +61,7 @@ export default async function CataloguePage({ searchParams }: PageProps) {
         </div>
 
         {/* Grid + Filters */}
-        <div className="px-6 py-12">
+        <div className="px-4 sm:px-6 py-10 sm:py-12">
           <div className="mx-auto max-w-6xl">
             <Suspense fallback={null}>
               <AnimalGrid animals={animals} />

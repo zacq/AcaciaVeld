@@ -28,7 +28,7 @@ export default function AnimalGrid({ animals, loading = false }: AnimalGridProps
       {/* Main grid area */}
       <div className="flex-1 min-w-0">
         {/* Mobile filter toggle */}
-        <div className="mb-6 flex items-center justify-between lg:hidden">
+        <div className="mb-5 flex items-center justify-between lg:hidden">
           <p className="text-sm text-white/50">
             {loading ? "Loading…" : `${animals.length} animal${animals.length !== 1 ? "s" : ""}`}
           </p>
@@ -46,11 +46,11 @@ export default function AnimalGrid({ animals, loading = false }: AnimalGridProps
         </p>
 
         {loading ? (
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
             {Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)}
           </div>
         ) : animals.length === 0 ? (
-          <div className="flex flex-col items-center gap-4 py-24 text-center">
+          <div className="flex flex-col items-center gap-4 py-16 sm:py-24 text-center">
             <span className="text-5xl">🐑</span>
             <p className="heading text-lg text-white">No animals match your filters</p>
             <p className="text-sm text-white/50">Try clearing some filters or browse the full catalogue.</p>
@@ -58,7 +58,7 @@ export default function AnimalGrid({ animals, loading = false }: AnimalGridProps
         ) : (
           <motion.div
             layout
-            className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
+            className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3"
           >
             <AnimatePresence mode="popLayout">
               {animals.map((animal) => (

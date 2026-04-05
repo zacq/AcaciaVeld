@@ -4,7 +4,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
 const TYPES = ["Sheep", "Goat", "Cattle", "Horse"];
-const BREEDS = ["Dorper", "Boer", "Red Maasai", "Ankole", "Boran", "Other"];
+const BREEDS = ["Boer", "Red Maasai", "Speckled Persian", "Zebu", "Friesian Cross", "Black Goat", "Horse"];
 const PURPOSES = ["Breeding", "Meat", "Dairy"];
 
 interface FilterSidebarProps {
